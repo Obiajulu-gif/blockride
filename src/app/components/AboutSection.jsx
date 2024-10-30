@@ -18,7 +18,7 @@ const AboutSection = () => {
 				{/* Text Content */}
 				<div className="w-full md:w-2/3 text-center md:text-left">
 					<p className="text-orange-500 uppercase tracking-wide mb-2 text-sm md:text-base">
-						About Us
+					💼 About Us
 					</p>
 					<h2 className="text-white text-3xl md:text-4xl font-semibold mb-4">
 						Driving Innovation In Mobility.
