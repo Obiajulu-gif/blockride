@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const JoinCommunitySection = () => {
   return (
-    <section className="bg-gray-900 py-8 px-4 flex justify-center">
+    <section className="bg-gradient-to-br from-gray-900 to-gray-800 py-8 px-4 flex justify-center">
       <div className="relative w-full max-w-4xl rounded-lg overflow-hidden flex flex-col md:flex-row bg-black">
         
         {/* Text and Button Section */}

@@ -11,7 +11,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="bg-gray-900 text-white py-16 px-4">
+    <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16 px-4">
       <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center">
         {/* Left Side - Header */}
         <div className="w-full md:w-1/3 mb-8 md:mb-0">

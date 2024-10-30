@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
             </p>
             <div className="flex items-center space-x-4">
               <Image
-                src="/images/user1.png" // Replace with actual image path
+                src="/images/av1.png" // Replace with actual image path
                 alt="User 1"
                 width={50}
                 height={50}
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
             </p>
             <div className="flex items-center space-x-4">
               <Image
-                src="/images/user2.png" // Replace with actual image path
+                src="/images/av1.png" // Replace with actual image path
                 alt="User 2"
                 width={50}
                 height={50}
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
             </p>
             <div className="flex items-center space-x-4">
               <Image
-                src="/images/user3.png" // Replace with actual image path
+                src="/images/av1.png" // Replace with actual image path
                 alt="User 3"
                 width={50}
                 height={50}
