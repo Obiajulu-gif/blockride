@@ -35,7 +35,7 @@ const Navbar = () => {
 
 				{/* Connect Wallet Button */}
 				<button className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg animate-bounce">
-					Connect Wallet
+					Start a journey
 				</button>
 
 				{/* Hamburger Menu Icon */}
