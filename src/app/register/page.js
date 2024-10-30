@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
+import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
     <div className="flex min-h-screen bg-gray-900">
       {/* Left Side - Image with Overlay Card */}
@@ -24,25 +25,47 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* Right Side - Login Form */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center p-11">
+      {/* Right Side - Registration Form */}
+      <div className="flex w-full lg:w-1/2 items-center justify-center p-8">
         <div className="max-w-md w-full space-y-8">
-          <h2 className="text-2xl font-bold text-white">Login with your email</h2>
+          <h2 className="text-2xl font-bold text-white">Register with your email</h2>
           <p className="text-gray-400">Enter your mail to begin your journey</p>
 
-          {/* Login Form */}
+          {/* Registration Form */}
           <div className="space-y-4">
-            <div>
-              <label className="sr-only" htmlFor="email">Email</label>
+            {/* Name Input */}
+            <div className="relative">
+              <FaUserAlt className="absolute left-3 top-3 text-gray-400" />
               <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                className="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-500"
+                type="text"
+                placeholder="Full Name"
+                className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white placeholder-gray-500"
               />
             </div>
+
+            {/* Email Input */}
+            <div className="relative">
+              <FaEnvelope className="absolute left-3 top-3 text-gray-400" />
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white placeholder-gray-500"
+              />
+            </div>
+
+            {/* Password Input */}
+            <div className="relative">
+              <FaLock className="absolute left-3 top-3 text-gray-400" />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full pl-10 p-3 rounded-md bg-gray-800 text-white placeholder-gray-500"
+              />
+            </div>
+
+            {/* Register Button */}
             <button className="w-full bg-orange-500 text-white font-semibold py-3 rounded-md hover:bg-orange-600 transition duration-300">
-              Log in
+              Register
             </button>
           </div>
 
@@ -53,7 +76,7 @@ const LoginPage = () => {
             <hr className="w-full border-gray-600" />
           </div>
 
-          {/* Social Login Buttons */}
+          {/* Social Register Buttons */}
           <div className="space-y-3">
             <button className="flex items-center justify-center w-full bg-white text-black font-semibold py-3 rounded-md hover:bg-gray-100 transition duration-300">
               <FaGoogle className="mr-2" /> Continue with Google
@@ -63,9 +86,9 @@ const LoginPage = () => {
             </button>
           </div>
 
-          {/* Register Link */}
+          {/* Login Link */}
           <p className="text-center text-gray-400">
-            Don’t have an account? <a href="#" className="text-orange-500 hover:underline">Register</a>
+            Already have an account? <a href="#" className="text-orange-500 hover:underline">Log in</a>
           </p>
         </div>
       </div>
@@ -73,4 +96,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

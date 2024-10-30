@@ -3,15 +3,15 @@ import Image from "next/image";
 const AboutSection = () => {
 	return (
 		<section className="w-full bg-gradient-to-br from-gray-900 to-gray-800 py-16">
-			<div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center md:space-x-10">
+			<div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center md:space-x-5">
 				{/* Left Icon */}
 				<div className="flex justify-center md:justify-start w-full md:w-1/3 mb-6 md:mb-0">
 					<Image
 						src="/images/Vector.png" 
 						alt="Blockchain icon"
-						width={150}
-						height={150}
-						className="opacity-80"
+						width={200}
+						height={200}
+						className="opacity-80 animate-spin"
 					/>
 				</div>
 
