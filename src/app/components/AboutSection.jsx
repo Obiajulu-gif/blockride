@@ -79,7 +79,7 @@ const AboutSection = () => {
 					>
 						Blockride is a decentralized car rental and ride-sharing platform
 						designed to bring trust, transparency, and flexibility to how you
-						move. Built on the Arbitrum blockchain, Blockride connects car
+						move. Built on the Lisk blockchain, Blockride connects car
 						owners with riders and renters through a secure, smart
 						contract-based environment, eliminating intermediaries and cutting
 						down on fees.
