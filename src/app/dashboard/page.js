@@ -2,11 +2,6 @@
 import DashboardLayout from "./layout";
 import Overview from "./overview/Overview";
 
-const Dashboard = () => {
-	return (
-			<Overview/>
-		
-	);
-};
-
-export default Dashboard;
+export default function Dashboard() {
+  return <Overview />;
+}
