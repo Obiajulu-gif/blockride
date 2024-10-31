@@ -1,4 +1,4 @@
-// components/Sidebar.js
+// components/dashboard/Sidebar.js
 "use client";
 import {
 	FaChartBar,
@@ -15,26 +15,39 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Sidebar = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
+	// Sidebar animation variants for framer-motion
+	const sidebarVariants = {
+		open: { width: "16rem", transition: { duration: 0.5 } },
+		closed: { width: "5rem", transition: { duration: 0.5 } },
+	};
+
+	const linkVariants = {
+		hidden: { opacity: 0, x: -20 },
+		visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+	};
+
 	return (
-		<div
-			className={`${
-				isSidebarOpen ? "w-64" : "w-20"
-			} bg-gray-900 text-white h-screen p-4 transition-all duration-300 flex flex-col justify-between fixed md:relative z-50`}
+		<motion.div
+			className="bg-gray-900 text-white h-screen p-4 flex flex-col justify-between fixed md:relative z-50 shadow-lg"
+			animate={isSidebarOpen ? "open" : "closed"}
+			variants={sidebarVariants}
 		>
 			{/* Sidebar Header */}
 			<div>
 				<Link href="/">
-					<h2
-						className={`text-3xl font-bold text-orange-500 ${
-							!isSidebarOpen && "hidden"
-						}`}
+					<motion.h2
+						className="text-3xl font-bold text-orange-500"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.2 }}
 					>
-						Blockride
-					</h2>
+						{isSidebarOpen && "Blockride"}
+					</motion.h2>
 				</Link>
 
 				{/* Main Navigation */}
@@ -45,54 +58,77 @@ const Sidebar = () => {
 					>
 						<FaChartBar className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-base font-medium">Overview</span>
+							<span className="text-lg font-medium">Overview</span>
 						)}
 					</Link>
+
 					<Link
 						href="/dashboard/book"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaCar className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-base font-medium">Book A Trip</span>
+							<span className="text-lg font-medium">Book A Trip</span>
 						)}
 					</Link>
+
+					{/* Dispatcher with "Coming Soon" Badge */}
 					<Link
 						href="/dashboard/dispatch"
-						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
+						className="flex items-center justify-between p-2 rounded hover:bg-gray-800 transition-colors"
 					>
-						<FaExchangeAlt className="text-2xl" />
+						<div className="flex items-center space-x-4">
+							<FaExchangeAlt className="text-2xl" />
+							{isSidebarOpen && (
+								<span className="text-lg font-medium">Dispatcher</span>
+							)}
+						</div>
 						{isSidebarOpen && (
-							<span className="text-base font-medium">Dispatch Service</span>
+							<span className="bg-orange-500 text-xs text-white px-2 py-1 rounded-full">
+								Coming Soon
+							</span>
 						)}
 					</Link>
+
+					{/* BlockRide DAO with "Coming Soon" Badge */}
 					<Link
 						href="/dashboard/dao"
-						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
+						className="flex items-center justify-between p-2 rounded hover:bg-gray-800 transition-colors"
 					>
-						<FaUserTie className="text-2xl" />
+						<div className="flex items-center space-x-4">
+							<FaUserTie className="text-2xl" />
+							{isSidebarOpen && (
+								<span className="text-lg font-medium">BlockRide DAO</span>
+							)}
+						</div>
 						{isSidebarOpen && (
-							<span className="text-base font-medium">BlockRide DAO</span>
+							<span className="bg-orange-500 text-xs text-white px-2 py-1 rounded-full">
+								Coming Soon
+							</span>
 						)}
 					</Link>
+
 					<Link
 						href="/dashboard/rewards"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaGift className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-base font-medium">Rewards</span>
+							<span className="text-lg font-medium">Rewards</span>
 						)}
 					</Link>
 
 					{/* Other Profiles Section */}
-					<div
-						className={`text-sm text-gray-400 mt-6 ${
-							!isSidebarOpen && "hidden"
-						}`}
-					>
-						Access Other Profiles
-					</div>
+					{isSidebarOpen && (
+						<motion.div
+							className="text-sm text-gray-400 mt-6"
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ delay: 0.4 }}
+						>
+							Access Other Profiles
+						</motion.div>
+					)}
 
 					<Link
 						href="/dashboard/driver"
@@ -100,16 +136,17 @@ const Sidebar = () => {
 					>
 						<FaIdCard className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-base font-medium">Driver Profile</span>
+							<span className="text-lg font-medium">Driver Profile</span>
 						)}
 					</Link>
+
 					<Link
 						href="/dashboard/investor"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaUserTie className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-base font-medium">Investor Profile</span>
+							<span className="text-lg font-medium">Investor Profile</span>
 						)}
 					</Link>
 				</nav>
@@ -122,7 +159,7 @@ const Sidebar = () => {
 					className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 				>
 					<FaQuestionCircle className="text-2xl" />
-					{isSidebarOpen && <span className="text-base font-medium">Help</span>}
+					{isSidebarOpen && <span className="text-lg font-medium">Help</span>}
 				</Link>
 				<Link
 					href="/dashboard/settings"
@@ -130,7 +167,7 @@ const Sidebar = () => {
 				>
 					<FaCog className="text-2xl" />
 					{isSidebarOpen && (
-						<span className="text-base font-medium">Settings</span>
+						<span className="text-lg font-medium">Settings</span>
 					)}
 				</Link>
 				<Link
@@ -139,7 +176,7 @@ const Sidebar = () => {
 				>
 					<FaSignOutAlt className="text-2xl" />
 					{isSidebarOpen && (
-						<span className="text-base font-medium">Log Out</span>
+						<span className="text-lg font-medium">Log Out</span>
 					)}
 				</Link>
 			</div>
@@ -155,7 +192,7 @@ const Sidebar = () => {
 					<FaChevronRight size={24} />
 				)}
 			</button>
-		</div>
+		</motion.div>
 	);
 };
 
