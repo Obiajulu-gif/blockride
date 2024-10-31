@@ -1,32 +1,40 @@
 // app/layout.js
-"use client"
+"use client";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./dashboard/Navbar";
+import Sidebar from "./dashboard/Sidebar";
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
-import DashboardLayout from "./dashboard/layout";
-// export const metadata = {
-// 	title: "BlockRide",
-// 	description:
-// 		"A blockchain-powered platform for secure, transparent, and accessible transportation.",
-// };
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isDashboard = pathname.startsWith("/dashboard");
-	return (
-		<html lang="en">
+
+  return (
+    <html lang="en">
       <body>
         {isDashboard ? (
-          <DashboardLayout />
+          <div className="flex h-screen bg-gray-900 text-white">
+            {/* Sidebar */}
+            <Sidebar />
+
+            {/* Main content area */}
+            <div className="flex-1 flex flex-col">
+              {/* Navbar */}
+              <Navbar />
+
+              {/* Content */}
+              <main className="flex-1 p-6 overflow-y-auto">{children}</main>
+            </div>
+          </div>
         ) : (
           <>
-            <Navbar /> 
-            <main>{children}</main> 
+            <Navbar />
+            <main>{children}</main>
             <Footer />
           </>
         )}
-			</body>
-		</html>
-	);
+      </body>
+    </html>
+  );
 }
