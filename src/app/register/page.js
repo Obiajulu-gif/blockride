@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {
 	FaGoogle,
@@ -7,10 +8,10 @@ import {
 	FaLock,
 } from "react-icons/fa";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Import useRouter
+import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
-	const router = useRouter(); // Initialize router
+	const router = useRouter();
 
 	const handleRegister = () => {
 		// Navigate to the dashboard route
@@ -42,8 +43,8 @@ const RegisterPage = () => {
 			</div>
 
 			{/* Right Side - Registration Form */}
-			<div className="flex w-full lg:w-1/2 items-center justify-center p-8">
-				<div className="max-w-md w-full space-y-8">
+			<div className="flex w-full lg:w-1/2 items-center justify-center p-10">
+				<div className="max-w-md w-full space-y-6">
 					<h2 className="text-2xl font-bold text-white">
 						Register with your email
 					</h2>
@@ -105,8 +106,8 @@ const RegisterPage = () => {
 
 					<p className="text-center text-gray-400">
 						Already have an account?{" "}
-						<Link href="/login">
-							<a className="text-orange-500 hover:underline">Log in</a>
+						<Link href="/login" className="text-orange-500 hover:underline">
+							Log in
 						</Link>
 					</p>
 				</div>
