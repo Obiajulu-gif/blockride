@@ -1,24 +1,54 @@
+"use client"
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const HeroSection = () => {
+	// States for each statistic
+	const [ridesCompleted, setRidesCompleted] = useState(0);
+	const [carsListed, setCarsListed] = useState(0);
+	const [totalUsers, setTotalUsers] = useState(0);
+	const [satisfiedUsers, setSatisfiedUsers] = useState(0);
+
+	// useEffect for counter effect
+	useEffect(() => {
+		const incrementValue = (endValue, setValue, duration) => {
+			let start = 0;
+			const step = Math.ceil((endValue / duration) * 10);
+
+			const counter = setInterval(() => {
+				start += step;
+				if (start >= endValue) {
+					setValue(endValue);
+					clearInterval(counter);
+				} else {
+					setValue(start);
+				}
+			}, 10);
+		};
+
+		// Initialize counters with desired end values
+		incrementValue(1250, setRidesCompleted, 2500); // Rides Completed
+		incrementValue(150, setCarsListed, 2000); // Cars Listed
+		incrementValue(560, setTotalUsers, 2000); // Total Users
+		incrementValue(98, setSatisfiedUsers, 2000); // Satisfied Users
+	}, []);
+
 	return (
 		<section
 			className="relative w-full h-screen bg-cover bg-center"
 			style={{ backgroundImage: "url(/images/Hero.png)" }}
 		>
-			{/* Overlay */}
-			<div className="absolute inset-0 bg-black opacity-40"></div>
+			{/* Gradient Overlay */}
+			<div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60 md:opacity-70"></div>
 
 			{/* Content */}
 			<div className="relative container mx-auto px-6 flex flex-col justify-center items-start h-full">
 				<h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-					<span className="text-orange-500">Together,</span> We Make
-					<br /> a Greener World.
+					<span className="text-orange-500">Blockchain-Powered,</span>
+					<br /> Transportation.
 				</h1>
-				<p className="mt-4 text-white max-w-md">
-					Whether you're commuting to work, meeting friends, or exploring new
-					places, our service offers a smart, safe, and eco-friendly way to get
-					around.
+				<p className="mt-4 text-white text-2xl max-w-md">
+					Redefining Trust and efficiency.
 				</p>
 				<div className="mt-8 flex space-x-4">
 					<button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-orange-600 transition duration-300">
@@ -29,25 +59,38 @@ const HeroSection = () => {
 					</button>
 				</div>
 			</div>
+			
 
 			{/* Stats Section */}
 			<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-6">
-				<div className="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-white">
+				<div className="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-5 gap-4 text-center text-white">
 					<div>
-						<h3 className="text-2xl font-semibold">1250+</h3>
+						<h3 className="text-2xl font-semibold text-orange-500">
+							{ridesCompleted}+
+						</h3>
 						<p className="text-sm">Rides Completed</p>
 					</div>
 					<div>
-						<h3 className="text-2xl font-semibold">150+</h3>
+						<h3 className="text-2xl font-semibold text-orange-500">
+							{carsListed}+
+						</h3>
 						<p className="text-sm">Cars Listed</p>
 					</div>
 					<div>
-						<h3 className="text-2xl font-semibold">560+</h3>
+						<h3 className="text-2xl font-semibold text-orange-500">
+							{totalUsers}+
+						</h3>
 						<p className="text-sm">Total Users</p>
 					</div>
 					<div>
-						<h3 className="text-2xl font-semibold">98%</h3>
+						<h3 className="text-2xl font-semibold text-orange-500">
+							{satisfiedUsers}%
+						</h3>
 						<p className="text-sm">Satisfied Users</p>
+					</div>
+					<div>
+						<h3 className="text-2xl font-semibold text-orange-500">$200k+</h3>
+						<p className="text-sm">Transactions</p>
 					</div>
 				</div>
 			</div>
