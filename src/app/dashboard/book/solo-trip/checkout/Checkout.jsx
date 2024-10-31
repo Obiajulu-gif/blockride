@@ -9,10 +9,10 @@ const Checkout = () => {
 	const searchParams = useSearchParams();
 
 	// Retrieve data from URL parameters
-	const departure = searchParams.get("departure");
-	const destination = searchParams.get("destination");
-	const time = searchParams.get("time");
-	const cost = searchParams.get("cost");
+	const departure = searchParams?.get("departure") || "N/A";
+	const destination = searchParams?.get("destination") || "N/A";
+	const time = searchParams?.get("time") || "N/A";
+	const cost = searchParams?.get("cost") || "N/A";
 
 	return (
 		<div className="p-8 bg-gray-900 min-h-screen text-white">
@@ -29,8 +29,8 @@ const Checkout = () => {
 					<h2 className="text-lg font-semibold mb-4">Book Information</h2>
 					<div className="bg-gray-700 p-4 rounded mb-4">
 						<p className="text-sm text-gray-400">
-							🎉 Congratulations! We have sent your book details to the vehicle
-							owner.
+							🎉 Congratulations! We have sent your booking details to the
+							vehicle owner.
 						</p>
 					</div>
 
