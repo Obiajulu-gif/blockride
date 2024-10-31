@@ -1,8 +1,22 @@
 import Image from "next/image";
-import { FaGoogle, FaTwitter } from "react-icons/fa";
-import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
+import {
+	FaGoogle,
+	FaTwitter,
+	FaUserAlt,
+	FaEnvelope,
+	FaLock,
+} from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // Import useRouter
+
 const RegisterPage = () => {
+	const router = useRouter(); // Initialize router
+
+	const handleRegister = () => {
+		// Navigate to the dashboard route
+		router.push("/dashboard");
+	};
+
 	return (
 		<div className="flex min-h-screen bg-gray-900">
 			{/* Left Side - Image with Overlay Card */}
@@ -10,8 +24,8 @@ const RegisterPage = () => {
 				<Image
 					src="/images/login.png"
 					alt="Become a Driver"
-					layout="fill"
-					objectFit="cover"
+					fill
+					style={{ objectFit: "cover" }}
 					className="opacity-90"
 				/>
 				<div className="absolute bottom-10 left-10 bg-black bg-opacity-60 text-white p-6 rounded-lg max-w-xs">
@@ -37,7 +51,6 @@ const RegisterPage = () => {
 
 					{/* Registration Form */}
 					<div className="space-y-4">
-						{/* Name Input */}
 						<div className="relative">
 							<FaUserAlt className="absolute left-3 top-3 text-gray-400" />
 							<input
@@ -47,7 +60,6 @@ const RegisterPage = () => {
 							/>
 						</div>
 
-						{/* Email Input */}
 						<div className="relative">
 							<FaEnvelope className="absolute left-3 top-3 text-gray-400" />
 							<input
@@ -57,7 +69,6 @@ const RegisterPage = () => {
 							/>
 						</div>
 
-						{/* Password Input */}
 						<div className="relative">
 							<FaLock className="absolute left-3 top-3 text-gray-400" />
 							<input
@@ -68,7 +79,10 @@ const RegisterPage = () => {
 						</div>
 
 						{/* Register Button */}
-						<button className="w-full bg-orange-500 text-white font-semibold py-3 rounded-md hover:bg-orange-600 transition duration-300">
+						<button
+							onClick={handleRegister} // Call handleRegister on click
+							className="w-full bg-orange-500 text-white font-semibold py-3 rounded-md hover:bg-orange-600 transition duration-300"
+						>
 							Register
 						</button>
 					</div>
@@ -80,7 +94,6 @@ const RegisterPage = () => {
 						<hr className="w-full border-gray-600" />
 					</div>
 
-					{/* Social Register Buttons */}
 					<div className="space-y-3">
 						<button className="flex items-center justify-center w-full bg-white text-black font-semibold py-3 rounded-md hover:bg-gray-100 transition duration-300">
 							<FaGoogle className="mr-2" /> Continue with Google
@@ -90,11 +103,10 @@ const RegisterPage = () => {
 						</button>
 					</div>
 
-					{/* Login Link */}
 					<p className="text-center text-gray-400">
 						Already have an account?{" "}
-						<Link href="/login" className="text-orange-500 hover:underline">
-							Log in
+						<Link href="/login">
+							<a className="text-orange-500 hover:underline">Log in</a>
 						</Link>
 					</p>
 				</div>
