@@ -13,8 +13,8 @@ const NavbarLanding = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const navigateToDashboard = () => {
-		router.push("/dashboard"); // Navigate to dashboard
+	const navigateToSign = () => {
+		router.push("/register"); // Navigate to dashboard
 		setIsOpen(false); // Close the menu on navigation
 	};
 
@@ -42,7 +42,7 @@ const NavbarLanding = () => {
 
 				{/* Start a Journey Button */}
 				<button
-					onClick={navigateToDashboard}
+					onClick={navigateToSign}
 					className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg animate-bounce"
 				>
 					Start a journey
@@ -74,7 +74,7 @@ const NavbarLanding = () => {
 						Contact Us
 					</Link>
 					<button
-						onClick={navigateToDashboard}
+						onClick={navigateToSign}
 						className="w-full bg-orange-500 text-white px-4 py-2 mt-2 rounded-lg"
 					>
 						Start a journey
