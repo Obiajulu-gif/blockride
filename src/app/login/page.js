@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
 
 const LoginPage = () => {
@@ -65,7 +66,7 @@ const LoginPage = () => {
 
           {/* Register Link */}
           <p className="text-center text-gray-400">
-            Don’t have an account? <a href="#" className="text-orange-500 hover:underline">Register</a>
+            Don’t have an account? <Link href="/register" className="text-orange-500 hover:underline">Register</Link>
           </p>
         </div>
       </div>
