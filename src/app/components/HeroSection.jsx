@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -35,7 +35,7 @@ const HeroSection = () => {
 
 	return (
 		<section
-			className="relative w-full h-screen bg-cover bg-center"
+			className="relative w-full h-screen bg-cover bg-center flex items-center"
 			style={{ backgroundImage: "url(/images/Hero.png)" }}
 		>
 			{/* Gradient Overlay */}
@@ -43,54 +43,57 @@ const HeroSection = () => {
 
 			{/* Content */}
 			<div className="relative container mx-auto px-6 flex flex-col justify-center items-start h-full">
-				<h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+				<h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
 					<span className="text-orange-500">Blockchain-Powered,</span>
 					<br /> Transportation.
 				</h1>
-				<p className="mt-4 text-white text-2xl max-w-md">
+				<p className="text-white text-lg sm:text-xl md:text-2xl max-w-md mb-6">
 					Redefining Trust and efficiency.
 				</p>
-				<div className="mt-8 flex space-x-4">
-					<button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-orange-600 transition duration-300">
+
+				{/* Buttons */}
+				<div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+					<button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-orange-600 transition duration-300 w-full sm:w-auto">
 						Book A Trip
 					</button>
-					<button className="bg-transparent border border-gray-300 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 hover:text-black transition duration-300">
+					<button className="bg-transparent border border-gray-300 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 hover:text-black transition duration-300 w-full sm:w-auto">
 						Rent A Car
 					</button>
 				</div>
 			</div>
-			
 
 			{/* Stats Section */}
 			<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-6">
-				<div className="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-5 gap-4 text-center text-white">
-					<div>
-						<h3 className="text-2xl font-semibold text-orange-500">
+				<div className="container mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center text-white">
+					<div className="flex flex-col items-center">
+						<h3 className="text-xl md:text-2xl font-semibold text-orange-500">
 							{ridesCompleted}+
 						</h3>
-						<p className="text-sm">Rides Completed</p>
+						<p className="text-xs sm:text-sm">Rides Completed</p>
 					</div>
-					<div>
-						<h3 className="text-2xl font-semibold text-orange-500">
+					<div className="flex flex-col items-center">
+						<h3 className="text-xl md:text-2xl font-semibold text-orange-500">
 							{carsListed}+
 						</h3>
-						<p className="text-sm">Cars Listed</p>
+						<p className="text-xs sm:text-sm">Cars Listed</p>
 					</div>
-					<div>
-						<h3 className="text-2xl font-semibold text-orange-500">
+					<div className="flex flex-col items-center">
+						<h3 className="text-xl md:text-2xl font-semibold text-orange-500">
 							{totalUsers}+
 						</h3>
-						<p className="text-sm">Total Users</p>
+						<p className="text-xs sm:text-sm">Total Users</p>
 					</div>
-					<div>
-						<h3 className="text-2xl font-semibold text-orange-500">
+					<div className="flex flex-col items-center">
+						<h3 className="text-xl md:text-2xl font-semibold text-orange-500">
 							{satisfiedUsers}%
 						</h3>
-						<p className="text-sm">Satisfied Users</p>
+						<p className="text-xs sm:text-sm">Satisfied Users</p>
 					</div>
-					<div>
-						<h3 className="text-2xl font-semibold text-orange-500">$200k+</h3>
-						<p className="text-sm">Transactions</p>
+					<div className="flex flex-col items-center">
+						<h3 className="text-xl md:text-2xl font-semibold text-orange-500">
+							$200k+
+						</h3>
+						<p className="text-xs sm:text-sm">Transactions</p>
 					</div>
 				</div>
 			</div>
