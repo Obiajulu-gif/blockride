@@ -1,162 +1,235 @@
 // components/dashboard/SharedTrip.js
 "use client";
 import React, { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa";
-import { useRouter } from "next/navigation"; // Correct import for `useRouter`
+import { FaArrowLeft, FaTimes } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const SharedTrip = () => {
 	const [isRecurring, setIsRecurring] = useState(true);
-	const [isLoading, setIsLoading] = useState(false); // To manage loading state
+	const [isWaitingModalOpen, setIsWaitingModalOpen] = useState(false);
+	const [foundPerson, setFoundPerson] = useState(false);
 	const router = useRouter();
 
 	const handlePublishRide = () => {
-		setIsLoading(true); // Start loading animation
-
-		// Simulate an API call or process delay
+		setIsWaitingModalOpen(true);
+		setFoundPerson(false);
 		setTimeout(() => {
-			router.push("/dashboard/book/shared-ride/results"); // Navigate to results page
-			setIsLoading(false); // Reset loading state after navigation
-		}, 1000);
+			setFoundPerson(true);
+		}, 2000);
 	};
-	const handleJoin = () => {
-		setIsLoading(true); // Start loading animation
 
-		// Simulate an API call or process delay
-		setTimeout(() => {
-			router.push("/dashboard/book/shared-ride/joinride"); // Navigate to results page
-			setIsLoading(false); // Reset loading state after navigation
-		}, 1000);
+	const closeModal = () => {
+		setIsWaitingModalOpen(false);
+		setFoundPerson(false);
+	};
+
+	const modalVariants = {
+		hidden: { opacity: 0, y: -20 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.5, type: "spring" },
+		},
 	};
 
 	return (
 		<div className="p-8 bg-gray-900 min-h-screen text-white flex flex-col items-center">
-			<div className="flex items-center space-x-2 mb-6">
-				<FaArrowLeft onClick={() => router.back()} className="cursor-pointer" />
-				<h1 className="text-xl font-semibold">
+			<motion.div
+				className="flex items-center space-x-2 mb-8"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1, transition: { duration: 0.6 } }}
+			>
+				<FaArrowLeft
+					onClick={() => router.back()}
+					className="cursor-pointer text-2xl hover:text-orange-500 transition duration-300"
+				/>
+				<h1 className="text-4xl font-extrabold">
 					Book A Trip &gt;&gt; Shared-Trip
 				</h1>
-			</div>
+			</motion.div>
 
-			<div className="flex justify-between w-full max-w-4xl items-center mb-6">
-				<div className="text-sm text-gray-400 flex items-center space-x-2">
+			<div className="flex justify-between w-full max-w-4xl items-center mb-8">
+				<div className="text-lg text-gray-400 flex items-center space-x-2">
 					<span>Book A Trip</span>
 					<span className="text-gray-500">{">>"}</span>
 					<span className="font-semibold">Shared-Trip</span>
 				</div>
 				<div className="flex space-x-4">
-					<button className="bg-orange-500 text-white py-2 px-6 rounded-full font-semibold hover:bg-orange-600">
+					<motion.button
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.95 }}
+						onClick={handlePublishRide}
+						className="bg-orange-500 text-white py-2 px-8 rounded-full font-semibold hover:bg-orange-600 transition duration-300"
+					>
 						Publish A Ride
-					</button>
-					<button
-						onClick={handleJoin}
-						className="text-orange-500 font-semibold"
+					</motion.button>
+					<motion.button
+						whileHover={{ scale: 1.05 }}
+						onClick={() => router.push("/dashboard/book/shared-ride/joinride")}
+						className="text-orange-500 font-semibold text-lg"
 					>
 						Join A Ride
-					</button>
+					</motion.button>
 				</div>
 			</div>
 
-			<div className="bg-gray-800 p-6 rounded-lg w-full max-w-4xl shadow-lg">
-				{/* Trip Details */}
+			<div className="bg-gray-800 p-8 rounded-lg w-full max-w-4xl shadow-lg">
 				<div className="mb-8">
-					<h2 className="text-xl font-semibold mb-4">Trip Details</h2>
-					<div className="grid md:grid-cols-2 gap-6">
+					<h2 className="text-2xl font-semibold mb-4">Trip Details</h2>
+					<div className="grid md:grid-cols-2 gap-8">
 						<div>
-							<label className="block text-gray-400 mb-2">Departure</label>
-							<select className="w-full bg-gray-700 p-3 rounded text-white">
+							<label className="block text-lg text-gray-400 mb-2">
+								Departure
+							</label>
+							<select className="w-full bg-gray-700 p-4 rounded-lg text-white">
 								<option>Select Pick-up Location</option>
+								<option>123 Main St, City A</option>
+								<option>456 Market Rd, City B</option>
+								<option>789 Ocean Blvd, City C</option>
+								<option>Airport Terminal, City D</option>
+								<option>University Ave, City E</option>
+								<option>Central Station, City F</option>
 							</select>
 						</div>
 						<div>
-							<label className="block text-gray-400 mb-2">Destination</label>
-							<select className="w-full bg-gray-700 p-3 rounded text-white">
+							<label className="block text-lg text-gray-400 mb-2">
+								Destination
+							</label>
+							<select className="w-full bg-gray-700 p-4 rounded-lg text-white">
 								<option>Select Destination</option>
+								<option>Downtown Plaza, City G</option>
+								<option>Sunset Beach, City H</option>
+								<option>Historic District, City I</option>
+								<option>Science Museum, City J</option>
+								<option>Shopping Mall, City K</option>
+								<option>Park Avenue, City L</option>
 							</select>
 						</div>
 						<div>
-							<label className="block text-gray-400 mb-2">Time</label>
-							<select className="w-full bg-gray-700 p-3 rounded text-white">
+							<label className="block text-lg text-gray-400 mb-2">Time</label>
+							<select className="w-full bg-gray-700 p-4 rounded-lg text-white">
 								<option>08:00 AM</option>
+								<option>09:00 AM</option>
+								<option>10:00 AM</option>
+								<option>11:00 AM</option>
+								<option>12:00 PM</option>
+								<option>01:00 PM</option>
+								<option>02:00 PM</option>
 							</select>
 						</div>
 						<div>
-							<label className="block text-gray-400 mb-2">Trip Cost</label>
+							<label className="block text-lg text-gray-400 mb-2">
+								Trip Cost
+							</label>
 							<input
 								type="text"
 								value="$50.02"
 								readOnly
-								className="w-full bg-gray-700 p-3 rounded text-white"
+								className="w-full bg-gray-700 p-4 rounded-lg text-white"
 							/>
 						</div>
 					</div>
 				</div>
 
-				{/* Passenger Details */}
 				<div className="mb-8">
-					<h2 className="text-xl font-semibold mb-4">Passenger Details</h2>
-					<div className="grid md:grid-cols-2 gap-6">
+					<h2 className="text-2xl font-semibold mb-4">Passenger Details</h2>
+					<div className="grid md:grid-cols-2 gap-8">
 						<div>
-							<label className="block text-gray-400 mb-2">
+							<label className="block text-lg text-gray-400 mb-2">
 								Seats on Vehicle
 							</label>
-							<select className="w-full bg-gray-700 p-3 rounded text-white">
-								<option>Select Seats</option>
+							<select className="w-full bg-gray-700 p-4 rounded-lg text-white">
+								<option>1 Seat</option>
+								<option>2 Seats</option>
+								<option>3 Seats</option>
+								<option>4 Seats</option>
+								<option>5 Seats</option>
+								<option>6 Seats</option>
 							</select>
 						</div>
 						<div>
-							<label className="block text-gray-400 mb-2">People to Take</label>
-							<select className="w-full bg-gray-700 p-3 rounded text-white">
-								<option>Select Capacity</option>
+							<label className="block text-lg text-gray-400 mb-2">
+								People to Take
+							</label>
+							<select className="w-full bg-gray-700 p-4 rounded-lg text-white">
+								<option>1 Person</option>
+								<option>2 People</option>
+								<option>3 People</option>
+								<option>4 People</option>
+								<option>5 People</option>
 							</select>
 						</div>
 					</div>
 				</div>
 
-				{/* Recurring/Custom Schedule */}
-				<div className="flex items-center justify-start space-x-4 mb-6">
-					<button
-						className={`${
-							isRecurring
-								? "bg-orange-500 text-white"
-								: "bg-gray-700 text-gray-400"
-						} py-2 px-4 rounded-full`}
-						onClick={() => setIsRecurring(true)}
+				{/* Modal for Waiting or Found Person */}
+				{isWaitingModalOpen && (
+					<motion.div
+						className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+						initial="hidden"
+						animate="visible"
+						variants={modalVariants}
 					>
-						Recurring
-					</button>
-					<button
-						className={`${
-							!isRecurring
-								? "bg-orange-500 text-white"
-								: "bg-gray-700 text-gray-400"
-						} py-2 px-4 rounded-full`}
-						onClick={() => setIsRecurring(false)}
-					>
-						Custom
-					</button>
-				</div>
-
-				{/* Days of the week */}
-				<div className="flex items-center justify-start space-x-4 mb-8">
-					{["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
-						<span
-							key={day}
-							className="bg-gray-700 text-white py-2 px-3 rounded-full text-sm cursor-pointer hover:bg-gray-600"
-						>
-							{day}
-						</span>
-					))}
-				</div>
-
-				{/* Publish Button with Loading State */}
-				<button
-					onClick={handlePublishRide}
-					className="w-full bg-orange-500 text-white py-3 rounded-full font-semibold hover:bg-orange-600 transition"
-					disabled={isLoading}
-				>
-					{isLoading ? "Publishing..." : "Publish Ride"}
-				</button>
+						<div className="bg-gray-800 p-8 rounded-lg text-center w-80 relative shadow-lg">
+							<button
+								className="absolute top-2 right-2 text-gray-400"
+								onClick={closeModal}
+							>
+								<FaTimes />
+							</button>
+							<h3 className="text-2xl font-semibold mb-6">
+								{foundPerson ? "Found 1 Person" : "Waiting For Others"}
+							</h3>
+							<div className="flex justify-center items-center mb-6">
+								<div className="dot-loader">
+									<div className="dot bg-gray-600"></div>
+									<div className="dot bg-gray-600"></div>
+									<div className="dot bg-gray-600"></div>
+									<div className="dot bg-gray-600"></div>
+								</div>
+							</div>
+							<button
+								className={`${
+									foundPerson
+										? "bg-orange-500 text-white"
+										: "bg-gray-600 text-gray-400"
+								} py-3 px-10 rounded-full font-semibold text-lg`}
+								disabled={!foundPerson}
+								onClick={() => {
+									if (foundPerson) {
+										closeModal();
+										router.push("/dashboard/book/shared-ride/results");
+									}
+								}}
+							>
+								Proceed
+							</button>
+						</div>
+					</motion.div>
+				)}
 			</div>
+
+			<style jsx>{`
+				.dot-loader {
+					display: flex;
+					gap: 0.5rem;
+				}
+				.dot {
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					animation: bounce 0.6s infinite alternate;
+				}
+				@keyframes bounce {
+					from {
+						transform: translateY(0);
+					}
+					to {
+						transform: translateY(-10px);
+					}
+				}
+			`}</style>
 		</div>
 	);
 };
