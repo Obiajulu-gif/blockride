@@ -1,6 +1,3 @@
-Here’s a sample `README.md` file that includes all the details you've specified, with sections covering the project overview, setup, technologies, team members, and more. Customize any details to suit your project better.
-
----
 
 # BlockRide Dashboard
 
