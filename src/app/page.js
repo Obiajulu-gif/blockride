@@ -17,7 +17,6 @@ export default function Home() {
       <TestimonialsSection/>
       <FAQSection/>
       <JoinCommunitySection/>
-      <Footer/>
     </>
   );
 }

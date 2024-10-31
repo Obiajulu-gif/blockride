@@ -8,6 +8,22 @@ const HeroSection = () => {
 	const [carsListed, setCarsListed] = useState(0);
 	const [totalUsers, setTotalUsers] = useState(0);
 	const [satisfiedUsers, setSatisfiedUsers] = useState(0);
+	const [text, setText] = useState("");
+	const fullText = "  Blockchain-Powered,";
+
+	// For the typewriter effect
+	useEffect(() => {
+		let index = 0;
+		const interval = setInterval(() => {
+			if (index < fullText.length - 1) {
+				setText((prev) => prev + fullText[index]);
+				index++;
+			} else {
+				clearInterval(interval);
+			}
+		}, 200);
+		return () => clearInterval(interval);
+	}, [fullText]);
 
 	// useEffect for counter effect
 	useEffect(() => {
@@ -44,7 +60,7 @@ const HeroSection = () => {
 			{/* Content */}
 			<div className="relative container mx-auto px-6 flex flex-col justify-center items-start h-full">
 				<h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
-					<span className="text-orange-500">Blockchain-Powered,</span>
+					<span className="text-orange-500">{text}</span>
 					<br /> Transportation.
 				</h1>
 				<p className="text-white text-lg sm:text-xl md:text-2xl max-w-md mb-6">
