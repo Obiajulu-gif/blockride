@@ -18,6 +18,15 @@ const SharedTrip = () => {
 			setIsLoading(false); // Reset loading state after navigation
 		}, 1000);
 	};
+	const handleJoin = () => {
+		setIsLoading(true); // Start loading animation
+
+		// Simulate an API call or process delay
+		setTimeout(() => {
+			router.push("/dashboard/book/shared-ride/joinride"); // Navigate to results page
+			setIsLoading(false); // Reset loading state after navigation
+		}, 1000);
+	};
 
 	return (
 		<div className="p-8 bg-gray-900 min-h-screen text-white flex flex-col items-center">
@@ -38,7 +47,12 @@ const SharedTrip = () => {
 					<button className="bg-orange-500 text-white py-2 px-6 rounded-full font-semibold hover:bg-orange-600">
 						Publish A Ride
 					</button>
-					<button className="text-orange-500 font-semibold">Join A Ride</button>
+					<button
+						onClick={handleJoin}
+						className="text-orange-500 font-semibold"
+					>
+						Join A Ride
+					</button>
 				</div>
 			</div>
 

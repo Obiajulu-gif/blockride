@@ -27,13 +27,15 @@ const Sidebar = () => {
 		>
 			{/* Sidebar Header */}
 			<div>
-				<h2
-					className={`text-3xl font-bold text-orange-500 ${
-						!isSidebarOpen && "hidden"
-					}`}
-				>
-					Blockride
-				</h2>
+				<Link href="/">
+					<h2
+						className={`text-3xl font-bold text-orange-500 ${
+							!isSidebarOpen && "hidden"
+						}`}
+					>
+						Blockride
+					</h2>
+				</Link>
 
 				{/* Main Navigation */}
 				<nav className="mt-8 flex flex-col space-y-4">

@@ -1,14 +1,21 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // Import for navigation
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+const NavbarLanding = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const router = useRouter(); // Initialize router
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
+	};
+
+	const navigateToDashboard = () => {
+		router.push("/dashboard"); // Navigate to dashboard
+		setIsOpen(false); // Close the menu on navigation
 	};
 
 	return (
@@ -33,8 +40,11 @@ const Navbar = () => {
 					<Link href="/contact">Contact Us</Link>
 				</div>
 
-				{/* Connect Wallet Button */}
-				<button className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg animate-bounce">
+				{/* Start a Journey Button */}
+				<button
+					onClick={navigateToDashboard}
+					className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg animate-bounce"
+				>
 					Start a journey
 				</button>
 
@@ -64,7 +74,7 @@ const Navbar = () => {
 						Contact Us
 					</Link>
 					<button
-						onClick={toggleMenu}
+						onClick={navigateToDashboard}
 						className="w-full bg-orange-500 text-white px-4 py-2 mt-2 rounded-lg"
 					>
 						Start a journey
@@ -75,4 +85,4 @@ const Navbar = () => {
 	);
 };
 
-export default Navbar;
+export default NavbarLanding;

@@ -1,6 +1,7 @@
 // app/layout.js
 "use client";
 import "./globals.css";
+import NavbarLanding from "./components/NavbarLanding";
 import Navbar from "./dashboard/Navbar";
 import Sidebar from "./dashboard/Sidebar";
 import Footer from "./components/Footer";
@@ -11,30 +12,30 @@ export default function RootLayout({ children }) {
   const isDashboard = pathname.startsWith("/dashboard");
 
   return (
-    <html lang="en">
-      <body>
-        {isDashboard ? (
-          <div className="flex h-screen bg-gray-900 text-white">
-            {/* Sidebar */}
-            <Sidebar />
+		<html lang="en">
+			<body>
+				{isDashboard ? (
+					<div className="flex h-screen bg-gray-900 text-white">
+						{/* Sidebar */}
+						<Sidebar />
 
-            {/* Main content area */}
-            <div className="flex-1 flex flex-col">
-              {/* Navbar */}
-              <Navbar />
+						{/* Main content area */}
+						<div className="flex-1 flex flex-col">
+							{/* Navbar */}
+							<Navbar />
 
-              {/* Content */}
-              <main className="flex-1 p-6 overflow-y-auto">{children}</main>
-            </div>
-          </div>
-        ) : (
-          <>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </>
-        )}
-      </body>
-    </html>
-  );
+							{/* Content */}
+							<main className="flex-1 p-6 overflow-y-auto">{children}</main>
+						</div>
+					</div>
+				) : (
+					<>
+						<NavbarLanding />
+						<main>{children}</main>
+						<Footer />
+					</>
+				)}
+			</body>
+		</html>
+	);
 }
