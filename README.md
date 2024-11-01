@@ -1,5 +1,5 @@
 
-# BlockRide Dashboard
+# BlockRide
 
 > **Blockchain-Powered Platform for Transparent and Secure Mobility**
 
