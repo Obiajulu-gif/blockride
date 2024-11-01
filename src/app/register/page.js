@@ -53,7 +53,7 @@ const RegisterPage = () => {
     });
 
     // Navigate to the dashboard route
-    // router.push("/dashboard");
+    router.push("/dashboard");
   };
 
   return (
@@ -165,8 +165,8 @@ const RegisterPage = () => {
                   <div className="text-white px-4 py-2 bg-gray-800 rounded-lg">
                     {`${account.address.slice(0, 4)}...${account.address.slice(
                       -4
-                    )}`}
-                    connected
+                    )}`} 
+                     connected
                   </div>
                   <LogoutButton />
                 </div>
