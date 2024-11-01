@@ -190,14 +190,7 @@ const RegisterPage = () => {
             <hr className="w-full border-gray-600" />
           </div>
 
-          <div className="space-y-3">
-            <button className="flex items-center justify-center w-full bg-white text-black font-semibold py-3 rounded-md hover:bg-gray-100 transition duration-300">
-              <FaGoogle className="mr-2" /> Continue with Google
-            </button>
-            <button className="flex items-center justify-center w-full bg-white text-black font-semibold py-3 rounded-md hover:bg-gray-100 transition duration-300">
-              <FaTwitter className="mr-2 text-blue-500" /> Continue with Twitter
-            </button>
-          </div>
+          
 
           <p className="text-center text-gray-400">
             Already have an account?{" "}

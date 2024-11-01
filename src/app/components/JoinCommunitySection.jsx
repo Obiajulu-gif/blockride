@@ -45,7 +45,7 @@ const JoinCommunitySection = () => {
 					</motion.button>
 				</motion.div>
 
-				{/* Background Image Section */}
+			
 				<motion.div
 					className="flex-1 relative"
 					initial={{ scale: 1.1 }}
