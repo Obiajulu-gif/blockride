@@ -5,7 +5,9 @@
 BlockRide redefines mobility through blockchain. Built with **Next.js** and **Lisk Blockchain**, BlockRide offers a decentralized platform for ride-sharing, car rentals, and mobility services. It seamlessly connects drivers, riders, and investors in a transparent, secure environment, using blockchain to enhance trust and eliminate intermediaries.
 
 ---
+
 ![Landing Page Photo](/public/landingpage.png)
+
 ## 🌟 Features
 
 - **📊 User-Friendly Dashboard**: Intuitive, responsive dashboard for drivers, riders, and investors.
@@ -32,6 +34,7 @@ BlockRide redefines mobility through blockchain. Built with **Next.js** and **Li
 - [Getting Started](#-getting-started)
 - [Project Structure](#-project-structure)
 - [Usage](#-usage)
+- [Blockchain Details](#-blockchain-details)
 - [Contributing](#-contributing)
 - [Team Members](#-team-members)
 - [License](#-license)
@@ -112,6 +115,16 @@ Once logged in, users can explore:
 
 ---
 
+## 🔗 Blockchain Details
+
+BlockRide utilizes blockchain technology to maintain transparency and security. For real-time updates on blockchain activities related to our platform, check our verified blockchain address on BlockScout:
+
+- **Blockchain Explorer Link**: [BlockRide Address on Sepolia BlockScout](https://sepolia-blockscout.lisk.com/address/0x4d45f8158e252fd8e026cd594a4ec70dcd712562)
+
+This link allows users and investors to monitor transactions and validate the platform’s transparency and integrity in real-time.
+
+---
+
 ## 🤝 Contributing
 
 BlockRide is open to contributions! To contribute:
@@ -168,3 +181,6 @@ For questions, support, or contributions, reach out to us at [support@blockride.
 ```
 
 BlockRide is your gateway to secure, transparent mobility, powered by the best in blockchain and web technology. Join us in reshaping the future of decentralized mobility! 🚀
+
+---
+
