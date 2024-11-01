@@ -15,10 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThirdwebProvider>
-          {children}
-          <LayoutHandler />
+          <LayoutHandler>{children}</LayoutHandler>
         </ThirdwebProvider>
       </body>
     </html>
   );
 }
+

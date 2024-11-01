@@ -6,7 +6,6 @@ import HowItWorksSection from "./components/HowItWorksSection"
 import TestimonialsSection from "./components/TestimonialsSection"
 import FAQSection from "./components/FAQSection"
 import JoinCommunitySection from "./components/JoinCommunitySection";
-import Footer from "./components/Footer"
 export default function Home() {
   return (
     <>
