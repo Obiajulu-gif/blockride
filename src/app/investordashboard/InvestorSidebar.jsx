@@ -47,7 +47,7 @@ const InvestorSidebar = () => {
 				{/* Main Navigation */}
 				<nav className="mt-8 flex flex-col space-y-4">
 					<Link
-						href="/investordashboard"
+						href="/investordashboard/overview"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaChartBar className="text-2xl" />
