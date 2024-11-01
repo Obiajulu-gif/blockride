@@ -9,25 +9,25 @@ const teamMembers = [
 		name: "Okoye Emmanuel Obiajulu",
 		title: "Project Lead / FullStack Developer",
 		bio: "A seasoned developer with a passion for blockchain technology and creating seamless user experiences.",
-		image: "/images/emmanuel.jpg", // Replace with the actual image path
+		image: "/images/emmanuel.jpeg", // Replace with the actual image path
 	},
 	{
 		name: "Victoria Nwogu",
 		title: "Project Manager",
 		bio: "Ensuring smooth workflows and efficient project execution with a focus on collaboration and innovation.",
-		image: "/images/vee.jpg", // Replace with the actual image path
+		image: "/images/vee.jpeg", // Replace with the actual image path
 	},
 	{
 		name: "David Emulo",
 		title: "UI/UX Designer",
 		bio: "Crafting user-friendly interfaces with a focus on aesthetics and functionality.",
-		image: "/images/david.jpg", // Replace with the actual image path
+		image: "/images/david.jpeg", // Replace with the actual image path
 	},
 	{
 		name: "Olebuezie Chibuzor Damian",
 		title: "Smart Contract Developer",
 		bio: "Bringing secure and efficient smart contracts to life, specializing in blockchain technology.",
-		image: "/images/damian.jpg", // Replace with the actual image path
+		image: "/images/damian.jpeg", // Replace with the actual image path
 	},
 ];
 
