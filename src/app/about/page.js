@@ -62,8 +62,8 @@ const AboutSection = () => {
 						<Image
 							src={member.image}
 							alt={member.name}
-							width={128}
-							height={128}
+							width={100}
+							height={100}
 							className="object-cover w-full h-full rounded-full"
 						/>
 						<h3 className="text-xl font-semibold mt-4">{member.name}</h3>
