@@ -6,13 +6,16 @@ import Navbar from "./dashboard/Navbar";
 import Sidebar from "./dashboard/Sidebar";
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
-import DriverNavbar from "./driverdashboard/DriverNavbar"; // Import driver-specific Navbar
-import DriverSidebar from "./driverdashboard/DriverSidebar"; // Import driver-specific Sidebar
+import DriverNavbar from "./driverdashboard/DriverNavbar";
+import DriverSidebar from "./driverdashboard/DriverSidebar";
+import InvestorNavbar from "./investordashboard/InvestorNavbar";
+import InvestorSidebar from "./investordashboard/InvestorSidebar";
 
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
 	const isDashboard = pathname.startsWith("/dashboard");
 	const isDriverDashboard = pathname.startsWith("/driverdashboard");
+	const isInvestorDashboard = pathname.startsWith("/investordashboard");
 
 	return (
 		<html lang="en">
@@ -26,6 +29,20 @@ export default function RootLayout({ children }) {
 						<div className="flex-1 flex flex-col">
 							{/* Driver Navbar */}
 							<DriverNavbar />
+
+							{/* Content */}
+							<main className="flex-1 p-6 overflow-y-auto">{children}</main>
+						</div>
+					</div>
+				) : isInvestorDashboard ? (
+					<div className="flex h-screen bg-gray-900 text-white">
+						{/* Investor Sidebar */}
+						<InvestorSidebar />
+
+						{/* Investor Main Content Area */}
+						<div className="flex-1 flex flex-col">
+							{/* Investor Navbar */}
+							<InvestorNavbar />
 
 							{/* Content */}
 							<main className="flex-1 p-6 overflow-y-auto">{children}</main>

@@ -43,7 +43,7 @@ const DriverSidebar = () => {
 				<nav className="mt-8 flex flex-col space-y-4">
 					{/* Overview */}
 					<Link
-						href="/dashboard"
+						href="/driverdashboard/overview"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaChartBar className="text-2xl" />
@@ -54,7 +54,7 @@ const DriverSidebar = () => {
 
 					{/* Trips */}
 					<Link
-						href="/dashboard/trips"
+						href="/driverdashboard/trips"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaCar className="text-2xl" />
@@ -65,7 +65,7 @@ const DriverSidebar = () => {
 
 					{/* Request Funds */}
 					<Link
-						href="/dashboard/request-funds"
+						href="/driverdashboard/request-funds"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaExchangeAlt className="text-2xl" />
@@ -123,7 +123,7 @@ const DriverSidebar = () => {
 
 					{/* Investor Profile */}
 					<Link
-						href="/dashboard/investor-profile"
+						href="/investordashboard"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaUserTie className="text-2xl" />
