@@ -31,6 +31,12 @@ const JoinCommunitySection = () => {
 						the current and upcoming generations.
 					</h2>
 					<motion.button
+						onClick={() =>
+							window.open(
+								"https://x.com/BlockRide__1?t=gQMAlmOnQoeGgXShmJ6Wfw&s=09",
+								"_blank"
+							)
+						}
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
 						className="mt-4 bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition duration-300"
