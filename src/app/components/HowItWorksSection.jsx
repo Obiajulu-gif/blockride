@@ -42,9 +42,9 @@ const HowItWorksSection = () => {
 					>
 						<div className="bg-gray-700 w-full h-40 rounded mb-4 flex items-center justify-center">
 							<Image
-								src="/images/join.png"
+								src="/images/p1.png"
 								alt="Step 1 Icon"
-								width={200}
+								width={400}
 								height={100}
 								className="animate-pulse"
 							/>
@@ -67,10 +67,10 @@ const HowItWorksSection = () => {
 					>
 						<div className="bg-gray-700 w-full h-40 rounded mb-4 flex items-center justify-center">
 							<Image
-								src="/images/ride.png"
+								src="/images/p2.png"
 								alt="Step 2 Icon"
-								width={160}
-								height={160}
+								width={400}
+								height={100}
 								className="animate-pulse"
 							/>
 						</div>
@@ -93,9 +93,9 @@ const HowItWorksSection = () => {
 					>
 						<div className="bg-gray-700 w-full h-40 rounded mb-4 flex items-center justify-center">
 							<Image
-								src="/images/transaction.png"
+								src="/images/p3.png"
 								alt="Step 3 Icon"
-								width={140}
+								width={400}
 								height={100}
 								className="animate-pulse"
 							/>
