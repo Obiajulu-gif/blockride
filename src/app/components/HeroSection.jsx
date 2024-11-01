@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection = () => {
 	// States for each statistic
@@ -69,13 +70,17 @@ const HeroSection = () => {
 
 				{/* Buttons */}
 				<div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-					<button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-orange-600 transition duration-300 w-full sm:w-auto">
-						Book A Trip
-					</button>
-					<button className="bg-transparent border border-gray-300 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 hover:text-black transition duration-300 w-full sm:w-auto">
-						Rent A Car
-					</button>
-				</div>
+			<Link href="/register" passHref>
+				<button className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-orange-600 transition duration-300 w-full sm:w-auto">
+					Book A Trip
+				</button>
+			</Link>
+			<Link href="/register" passHref>
+				<button className="bg-transparent border border-gray-300 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 hover:text-black transition duration-300 w-full sm:w-auto">
+					Rent A Car
+				</button>
+			</Link>
+		</div>
 			</div>
 
 			{/* Stats Section */}
