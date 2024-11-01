@@ -61,7 +61,7 @@ const AboutSection = () => {
 					</motion.h2>
 
 					<motion.h3
-						className="text-yellow-400 text-2xl md:text-2xl font-semibold mb-4"
+						className="text-orange-500 text-2xl md:text-2xl font-semibold mb-4"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
@@ -79,10 +79,9 @@ const AboutSection = () => {
 					>
 						Blockride is a decentralized car rental and ride-sharing platform
 						designed to bring trust, transparency, and flexibility to how you
-						move. Built on the Lisk blockchain, Blockride connects car
-						owners with riders and renters through a secure, smart
-						contract-based environment, eliminating intermediaries and cutting
-						down on fees.
+						move. Built on the Lisk blockchain, Blockride connects car owners
+						with riders and renters through a secure, smart contract-based
+						environment, eliminating intermediaries and cutting down on fees.
 					</motion.p>
 
 					<motion.p

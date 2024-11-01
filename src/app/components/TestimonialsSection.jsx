@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
 						<span>Testimonials</span>
 					</div>
 					<h2 className="text-white text-3xl md:text-4xl font-semibold mt-4">
-						Simple Steps To Seamless Travel.
+						User Shared Insight
 					</h2>
 				</motion.div>
 

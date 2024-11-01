@@ -65,10 +65,12 @@ const FAQSection = () => {
 									onClick={() => toggleFAQ(index)}
 								>
 									<h3 className="text-lg font-medium">{faq.question}</h3>
-									<div className="text-orange-500">
-										<FaPlus
-											className={`${openFAQ === index ? "rotate-45" : ""}`}
-										/>
+									<div
+										className={`text-orange-500 transform transition-transform duration-200 ${
+											openFAQ === index ? "rotate-45" : ""
+										}`}
+									>
+										<FaPlus />
 									</div>
 								</div>
 								{openFAQ === index && (
