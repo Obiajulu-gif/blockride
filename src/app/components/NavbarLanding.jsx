@@ -24,7 +24,7 @@ const NavbarLanding = () => {
 				{/* Logo and Name */}
 				<div className="flex items-center">
 					<Image
-						src="/logo.png"
+						src="/blockridelogo.png"
 						alt="Blockride Logo"
 						width={40}
 						height={40}
