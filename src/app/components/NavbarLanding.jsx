@@ -28,9 +28,9 @@ const NavbarLanding = () => {
 						alt="Blockride Logo"
 						width={40}
 						height={40}
-						className="mr-2"
+						className="mr-2 animate-pulse"
 					/>
-					<span className="text-white text-xl font-semibold">Blockride</span>
+					<span className="text-white text-xl font-semibold">Block <span className="text-orange-500">ride</span></span>
 				</div>
 
 				{/* Menu Links */}
@@ -72,11 +72,7 @@ const NavbarLanding = () => {
 					>
 						About Us
 					</Link>
-					<Link
-						href="/about"
-						onClick={toggleMenu}
-						className="block px-4 py-2"
-					>
+					<Link href="/about" onClick={toggleMenu} className="block px-4 py-2">
 						Contact Us
 					</Link>
 					<button
