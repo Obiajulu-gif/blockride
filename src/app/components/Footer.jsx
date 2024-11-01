@@ -7,6 +7,7 @@ import {
 	FaInstagram,
 	FaLinkedinIn,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
 	// State for dynamic year
@@ -47,14 +48,11 @@ const Footer = () => {
 						whileInView={{ opacity: 1 }}
 						transition={{ duration: 1, delay: 0.2 }}
 					>
+						<Link href="/" passHref>
+							<a className="text-gray-400 hover:text-white transition duration-300">Home</a>
+						</Link>
 						<a
-							href="#home"
-							className="text-gray-400 hover:text-white transition duration-300"
-						>
-							Home
-						</a>
-						<a
-							href="#about"
+							href="https://www.notion.so/12f385cd77cc8041a9fefc57981d5ea8?pvs=4"
 							className="text-gray-400 hover:text-white transition duration-300"
 						>
 							About Us

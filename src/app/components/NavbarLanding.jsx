@@ -36,7 +36,9 @@ const NavbarLanding = () => {
 				{/* Menu Links */}
 				<div className="hidden md:flex space-x-8 text-white">
 					<Link href="/">Home</Link>
-					<Link href="/about">About Us</Link>
+					<Link href="https://www.notion.so/12f385cd77cc8041a9fefc57981d5ea8?pvs=4">
+						About Us
+					</Link>
 					<Link href="/contact">Contact Us</Link>
 				</div>
 
@@ -63,7 +65,11 @@ const NavbarLanding = () => {
 					<Link href="/" onClick={toggleMenu} className="block px-4 py-2">
 						Home
 					</Link>
-					<Link href="/about" onClick={toggleMenu} className="block px-4 py-2">
+					<Link
+						href="https://www.notion.so/12f385cd77cc8041a9fefc57981d5ea8?pvs=4"
+						onClick={toggleMenu}
+						className="block px-4 py-2"
+					>
 						About Us
 					</Link>
 					<Link
