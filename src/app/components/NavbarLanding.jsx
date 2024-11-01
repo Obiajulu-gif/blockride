@@ -39,7 +39,7 @@ const NavbarLanding = () => {
 					<Link href="https://www.notion.so/12f385cd77cc8041a9fefc57981d5ea8?pvs=4">
 						About Us
 					</Link>
-					<Link href="/contact">Contact Us</Link>
+					<Link href="/about">Contact Us</Link>
 				</div>
 
 				{/* Start a Journey Button */}
@@ -73,7 +73,7 @@ const NavbarLanding = () => {
 						About Us
 					</Link>
 					<Link
-						href="/contact"
+						href="/about"
 						onClick={toggleMenu}
 						className="block px-4 py-2"
 					>
