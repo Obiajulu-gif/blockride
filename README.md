@@ -6,8 +6,7 @@ BlockRide redefines mobility through blockchain. Built with **Next.js** and **Li
 
 ---
 
-![Landing Page Photo](/public/landingpage.png)
-
+![Landing page](/public/images/landingpage.png)
 ## 🌟 Features
 
 - **📊 User-Friendly Dashboard**: Intuitive, responsive dashboard for drivers, riders, and investors.
