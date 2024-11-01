@@ -1,10 +1,10 @@
-// components/dashboard/Sidebar.js
 "use client";
 import {
 	FaChartBar,
 	FaCar,
 	FaExchangeAlt,
 	FaGift,
+	FaUser,
 	FaUserTie,
 	FaIdCard,
 	FaQuestionCircle,
@@ -17,18 +17,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const Sidebar = () => {
+const DriverSidebar = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-	// Sidebar animation variants for framer-motion
 	const sidebarVariants = {
 		open: { width: "16rem", transition: { duration: 0.5 } },
-		closed: { width: "5rem", transition: { duration: 0.5 } },
-	};
-
-	const linkVariants = {
-		hidden: { opacity: 0, x: -20 },
-		visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+		closed: { width: "4rem", transition: { duration: 0.5 } },
 	};
 
 	return (
@@ -40,18 +34,14 @@ const Sidebar = () => {
 			{/* Sidebar Header */}
 			<div>
 				<Link href="/">
-					<motion.h2
-						className="text-3xl font-bold text-orange-500"
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 0.2 }}
-					>
-						{isSidebarOpen && "Blockride"}
-					</motion.h2>
+					<h2 className="text-3xl font-bold text-orange-500">
+						{isSidebarOpen && "BlockRide"}
+					</h2>
 				</Link>
 
 				{/* Main Navigation */}
 				<nav className="mt-8 flex flex-col space-y-4">
+					{/* Overview */}
 					<Link
 						href="/dashboard"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
@@ -62,31 +52,25 @@ const Sidebar = () => {
 						)}
 					</Link>
 
+					{/* Trips */}
 					<Link
-						href="/dashboard/book"
+						href="/dashboard/trips"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaCar className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-lg font-medium">Book A Trip</span>
+							<span className="text-lg font-medium">Trips</span>
 						)}
 					</Link>
 
-					{/* Dispatcher with "Coming Soon" Badge */}
+					{/* Request Funds */}
 					<Link
-						href="/dashboard/dispatch"
-						className="flex items-center justify-between p-2 rounded hover:bg-gray-800 transition-colors"
+						href="/dashboard/request-funds"
+						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
-						<div className="flex items-center space-x-4">
-							<FaExchangeAlt className="text-2xl" />
-							{isSidebarOpen && (
-								<span className="text-lg font-medium">Dispatcher</span>
-							)}
-						</div>
+						<FaExchangeAlt className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="bg-orange-500 text-xs text-white px-2 py-1 rounded-full">
-								Coming Soon
-							</span>
+							<span className="text-lg font-medium">Request Funds</span>
 						)}
 					</Link>
 
@@ -108,6 +92,7 @@ const Sidebar = () => {
 						)}
 					</Link>
 
+					{/* Rewards */}
 					<Link
 						href="/dashboard/rewards"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
@@ -118,30 +103,27 @@ const Sidebar = () => {
 						)}
 					</Link>
 
-					{/* Other Profiles Section */}
+					{/* Access Other Profiles Header */}
 					{isSidebarOpen && (
-						<motion.div
-							className="text-sm text-gray-400 mt-6"
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ delay: 0.4 }}
-						>
+						<div className="text-sm text-gray-400 mt-6">
 							Access Other Profiles
-						</motion.div>
+						</div>
 					)}
 
+					{/* User Profile */}
 					<Link
-						href="/driverdashboard"
+						href="/dashboard"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
-						<FaIdCard className="text-2xl" />
+						<FaUser className="text-2xl" />
 						{isSidebarOpen && (
-							<span className="text-lg font-medium">Driver Profile</span>
+							<span className="text-lg font-medium">User Profile</span>
 						)}
 					</Link>
 
+					{/* Investor Profile */}
 					<Link
-						href="/dashboard/investor"
+						href="/dashboard/investor-profile"
 						className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
 					>
 						<FaUserTie className="text-2xl" />
@@ -154,6 +136,7 @@ const Sidebar = () => {
 
 			{/* Bottom Section */}
 			<div className="flex flex-col space-y-4 mt-auto">
+				{/* Help */}
 				<Link
 					href="/dashboard/help"
 					className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
@@ -161,6 +144,8 @@ const Sidebar = () => {
 					<FaQuestionCircle className="text-2xl" />
 					{isSidebarOpen && <span className="text-lg font-medium">Help</span>}
 				</Link>
+
+				{/* Settings */}
 				<Link
 					href="/dashboard/settings"
 					className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
@@ -170,6 +155,8 @@ const Sidebar = () => {
 						<span className="text-lg font-medium">Settings</span>
 					)}
 				</Link>
+
+				{/* Log Out */}
 				<Link
 					href="/dashboard/logout"
 					className="flex items-center space-x-4 p-2 rounded hover:bg-gray-800 transition-colors"
@@ -196,4 +183,4 @@ const Sidebar = () => {
 	);
 };
 
-export default Sidebar;
+export default DriverSidebar;
