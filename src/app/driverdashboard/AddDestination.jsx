@@ -83,9 +83,10 @@ const AddDestination = () => {
       <button
         onClick={handleAddDestination}
         disabled={isSubmitting}
-        className={w-full py-3 rounded-lg text-lg font-semibold ${
+        className={`w-full py-3 rounded-lg text-lg font-semibold ${
           isSubmitting ? "bg-gray-600" : "bg-orange-500 hover:bg-orange-600"
-        } transition duration-300}>
+        } transition duration-300`}
+      >
         {isSubmitting ? "Adding..." : "Add Destination"}
       </button>
     </div>
