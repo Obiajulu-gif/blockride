@@ -19,7 +19,7 @@ const NavbarLanding = () => {
 	};
 
 	return (
-		<nav className="bg-gradient-to-r from-gray-800 to-gray-900 p-4 fixed w-full z-10">
+		<nav className="bg-gradient-to-r from-gray-800 to-gray-900 p-4 fixed w-full z-20">
 			<div className="container mx-auto flex items-center justify-between">
 				{/* Logo and Name */}
 				<div className="flex items-center">
