@@ -8,7 +8,6 @@ import { getContract, prepareContractCall } from "thirdweb";
 import { liskSepolia } from "src/liskSepolia";
 import { client } from "src/client";
 import { useActiveAccount } from "thirdweb/react";
-import AddDestination from "./AddDestination";
 import BookRide from "./BookRide";
 
 // Initialize contract object
@@ -195,7 +194,6 @@ const Overview = () => {
         </div>
       )}
 
-      <AddDestination />
       <BookRide />
     </div>
   );
