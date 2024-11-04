@@ -1,3 +1,7 @@
+Here's the updated README with the requested links and icons for Figma, Twitter, and Telegram.
+
+---
+
 # 🚗 **BlockRide** 🚗
 
 **Blockchain-Powered Mobility Platform for Transparent and Secure Transactions**
@@ -7,6 +11,7 @@ BlockRide redefines mobility through blockchain. Built with **Next.js** and **Li
 ---
 
 ![Landing page](/public/images/landingpage.png)
+
 ## 🌟 Features
 
 - **📊 User-Friendly Dashboard**: Intuitive, responsive dashboard for drivers, riders, and investors.
@@ -124,6 +129,14 @@ This link allows users and investors to monitor transactions and validate the pl
 
 ---
 
+## 🔗 Design and Social Links
+
+- [![Figma](https://img.icons8.com/color/24/figma--v1.png) Figma Design](https://www.figma.com/design/aaiOVmB7Vckls7jJCEhm7G/BLOCKRIDE-TEAM?node-id=0-1&node-type=canvas&t=Cmf9PMCqMLBvgDS8-0)  
+- [![Twitter](https://img.icons8.com/color/24/twitter--v1.png) Twitter](https://x.com/BlockRide__1?t=gQMAlmOnQoeGgXShmJ6Wfw&s=09)
+- [![Telegram](https://img.icons8.com/color/24/telegram-app.png) Telegram](https://t.me/BLOCKRIDE__1)
+
+---
+
 ## 🤝 Contributing
 
 BlockRide is open to contributions! To contribute:
@@ -181,5 +194,6 @@ For questions, support, or contributions, reach out to us at [support@blockride.
 
 BlockRide is your gateway to secure, transparent mobility, powered by the best in blockchain and web technology. Join us in reshaping the future of decentralized mobility! 🚀
 
----
+--- 
 
+This README now includes links to Figma, Twitter, and Telegram with icons for each link, providing a professional and comprehensive overview.
