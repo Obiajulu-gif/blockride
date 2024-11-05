@@ -1,7 +1,3 @@
-Here's the updated README with the requested links and icons for Figma, Twitter, and Telegram.
-
----
-
 # 🚗 **BlockRide** 🚗
 
 **Blockchain-Powered Mobility Platform for Transparent and Secure Transactions**
@@ -196,4 +192,3 @@ BlockRide is your gateway to secure, transparent mobility, powered by the best i
 
 --- 
 
-This README now includes links to Figma, Twitter, and Telegram with icons for each link, providing a professional and comprehensive overview.
